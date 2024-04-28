@@ -182,12 +182,8 @@ window_rules:
     match_process_name: "firefox"  
     
   - command: "move to workspace 4"
-    match_process_name: "Notion"  
-    match_process_name: "Notion"  
+    match_process_name: "MATLAB"  
 
-  - command: "move to workspace 5"    
-    match_process_name: "code"    
-    match_process_name: "Notion"  
 binding_modes:
   - name: "resize"
     keybindings:
