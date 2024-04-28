@@ -1,3 +1,5 @@
 [v1]
 "nu 0.90.1 (registry+https://github.com/rust-lang/crates.io-index)" = ["nu.exe"]
 "tealdeer 1.6.1 (registry+https://github.com/rust-lang/crates.io-index)" = ["tldr.exe"]
+"cargo-binstall 1.6.4 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-binstall.exe"]
+"coreutils 0.0.26 (registry+https://github.com/rust-lang/crates.io-index)" = ["coreutils.exe"]
