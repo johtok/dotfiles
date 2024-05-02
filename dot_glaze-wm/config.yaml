@@ -77,12 +77,12 @@ bar:
       label_thunderstorm: "<attr fs='20' fg='#bc7005'>󰖓</attr>{temperature_celsius}"
       label_cloud: "<attr fs='20' fg='#bc7005'></attr>{temperature_celsius}"
       margin: "0px 10px 0px 0px"
-    - type: "music"
-      label_not_playing: ""
-      label_paused: "{song_title} - {artist_name}"
-      label_playing: "{song_title} - {artist_name} ▶"
-      max_title_length: 20
-      max_artist_length: 20
+   # - type: "music"
+   #   label_not_playing: ""
+   #   label_paused: "{song_title} - {artist_name}"
+   #   label_playing: "{song_title} - {artist_name} ▶"
+   #   max_title_length: 20
+   #   max_artist_length: 20
     # - type: "system stats"
     # - type: "text"
     #   text: "  "
@@ -134,7 +134,7 @@ bar:
       padding: "0 8px"
     - type: "clock"
       foreground: "#bc7005"
-      time_formatting: "HH:mm:ss  ddd dd/mm  "
+      time_formatting: "HH:mm:ss  ddd dd/MM "
       margin: "0 0 0 10px"
 
 workspaces:
@@ -148,7 +148,7 @@ workspaces:
     display_name: "Web"
     keep_alive: true
   - name: "4"
-    display_name: "School"
+    display_name: "Work"
     keep_alive: true
   - name: "5"
     display_name: "Music"
@@ -183,6 +183,9 @@ window_rules:
     
   - command: "move to workspace 4"
     match_process_name: "MATLAB"  
+
+  - command: "move to workspace 5"
+    match_process_name: "Spotify"  
 
 binding_modes:
   - name: "resize"
