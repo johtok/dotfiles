@@ -23,3 +23,4 @@
 "trippy 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["trip.exe"]
 "uiua 0.10.3 (registry+https://github.com/rust-lang/crates.io-index)" = ["uiua.exe"]
 "zoxide 0.9.4 (registry+https://github.com/rust-lang/crates.io-index)" = ["zoxide.exe"]
+"termscp 0.14.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["termscp.exe"]
