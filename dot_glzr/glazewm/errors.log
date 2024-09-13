@@ -1,0 +1,53 @@
+[2m2024-09-09T12:08:24.095462Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m gaps: data did not match any variant of untagged enum LengthValueDe at line 11 column 3
+[2m2024-09-09T12:08:35.431941Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m gaps: data did not match any variant of untagged enum LengthValueDe at line 11 column 3
+[2m2024-09-09T12:09:07.587717Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m gaps: data did not match any variant of untagged enum LengthValueDe at line 11 column 3
+[2m2024-09-09T12:09:21.181913Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m gaps: data did not match any variant of untagged enum LengthValueDe at line 11 column 3
+[2m2024-09-09T12:09:37.594278Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m general: missing field `cursor_jump` at line 15 column 3
+[2m2024-09-09T12:09:57.806317Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[0]: missing field `commands` at line 174 column 5
+[2m2024-09-09T12:10:12.679284Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[0]: missing field `commands` at line 174 column 5
+[2m2024-09-09T12:10:29.447697Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[0].commands: invalid type: string "ignore", expected a sequence at line 174 column 15
+[2m2024-09-09T12:29:12.758147Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m keybindings[25]: missing field `bindings` at line 231 column 5
+[2m2024-09-09T12:29:20.360374Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m keybindings[25]: missing field `bindings` at line 231 column 5
+[2m2024-09-09T13:04:56.549896Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[4]: duplicate field `match` at line 131 column 5
+[2m2024-09-09T13:38:36.276031Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Another instance of the application is already running.
+[2m2024-09-09T13:42:31.254086Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[0].match[2]: data did not match any variant of untagged enum MatchType at line 112 column 9
+[2m2024-09-09T13:42:41.540456Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[0].match[2]: data did not match any variant of untagged enum MatchType at line 112 column 9
+[2m2024-09-09T13:43:01.310911Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[4].match[0]: data did not match any variant of untagged enum MatchType at line 139 column 9
+[2m2024-09-09T14:10:08.168274Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m window_rules[6].commands: unrecognized subcommand
+ at line 143 column 15
+[2m2024-09-09T14:10:28.982058Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m did not find expected key at line 144 column 7, while parsing a block mapping at line 143 column 5
+[2m2024-09-09T14:10:31.005552Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m did not find expected key at line 144 column 7, while parsing a block mapping at line 143 column 5
+[2m2024-09-09T14:10:44.202304Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m did not find expected key at line 144 column 7, while parsing a block mapping at line 143 column 5
+[2m2024-09-09T14:11:14.299937Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m did not find expected key at line 144 column 7, while parsing a block mapping at line 143 column 5
+[2m2024-09-09T14:19:42.743668Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m general.startup_commands: unrecognized subcommand
+ at line 4 column 21
+[2m2024-09-09T14:19:52.026654Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m did not find expected ',' or ']' at line 4 column 71, while parsing a flow sequence at line 4 column 21
+[2m2024-09-09T14:19:56.866807Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m did not find expected ',' or ']' at line 4 column 71, while parsing a flow sequence at line 4 column 21
+[2m2024-09-09T14:20:47.543862Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m did not find expected key at line 143 column 7, while parsing a block mapping at line 142 column 5
+[2m2024-09-09T14:21:04.106254Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m general.startup_commands: unrecognized subcommand
+ at line 4 column 21
+[2m2024-09-09T14:23:04.900144Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m general: duplicate field `startup_commands` at line 4 column 3
+[2m2024-09-09T14:23:08.631868Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m general: duplicate field `startup_commands` at line 4 column 3
+[2m2024-09-09T14:23:21.076484Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m general.startup_commands: unrecognized subcommand
+ at line 4 column 21
+[2m2024-09-09T14:24:59.462565Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m did not find expected key at line 19 column 29, while parsing a block mapping at line 14 column 5
+[2m2024-09-09T14:25:04.930278Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m did not find expected key at line 19 column 29, while parsing a block mapping at line 14 column 5
+[2m2024-09-09T14:26:01.357603Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m general.startup_commands: unrecognized subcommand
+ at line 4 column 21
+[2m2024-09-09T14:26:20.210940Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m did not find expected key at line 19 column 29, while parsing a block mapping at line 14 column 5
+[2m2024-09-09T14:26:37.893789Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m did not find expected key at line 19 column 29, while parsing a block mapping at line 14 column 5
+[2m2024-09-09T14:26:59.030699Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m did not find expected key at line 144 column 7, while parsing a block mapping at line 143 column 5
+[2m2024-09-09T14:27:24.517618Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m general.startup_commands: unrecognized subcommand
+ at line 4 column 21
+[2m2024-09-09T14:27:29.521997Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m general.startup_commands: unrecognized subcommand
+ at line 4 column 21
+[2m2024-09-09T14:27:39.249403Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m general.startup_commands: unrecognized subcommand
+ at line 4 column 21
+[2m2024-09-09T14:27:46.232212Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m did not find expected ',' or ']' at line 4 column 70, while parsing a flow sequence at line 4 column 21
+[2m2024-09-09T14:27:54.496158Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m did not find expected ',' or ']' at line 4 column 70, while parsing a flow sequence at line 4 column 21
+[2m2024-09-09T14:27:59.050272Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m did not find expected ',' or ']' at line 4 column 70, while parsing a flow sequence at line 4 column 21
+[2m2024-09-09T14:28:07.883258Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m did not find expected ',' or ']' at line 4 column 70, while parsing a flow sequence at line 4 column 21
+[2m2024-09-09T14:28:16.418565Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m did not find expected ',' or ']' at line 4 column 70, while parsing a flow sequence at line 4 column 21
+[2m2024-09-09T14:28:19.690458Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m did not find expected ',' or ']' at line 4 column 70, while parsing a flow sequence at line 4 column 21
+[2m2024-09-09T16:53:53.830399Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m Another instance of the application is already running.
+[2m2024-09-09T17:19:34.320845Z[0m [31mERROR[0m [2mglazewm[0m[2m:[0m did not find expected ',' or ']' at line 4 column 86, while parsing a flow sequence at line 4 column 21
