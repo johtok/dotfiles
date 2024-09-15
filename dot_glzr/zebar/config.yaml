@@ -36,7 +36,7 @@ window/bar:
     align-items: center;
     height: 100%;
     color: rgb(255 255 255 / 90%);
-    font-family: ui-monospace, monospace;
+    font-family: CaskaydiaCove Nerd Font SemiBold, monospace;
     font-size: 12px;
     padding: 4px 24px;
     border-bottom: 1px solid rgb(255 255 255 / 5%);;
