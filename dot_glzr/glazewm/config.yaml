@@ -71,27 +71,27 @@ window_behavior:
 
 workspaces:
   - name: "1"
-    display_name: <i class="nf nf-fa-home"></i> Home
+    display_name: <i class="nf nf-fa-home"></i>
     bind_to_monitor: 1
     keep_alive: true
   - name: "2"
-    display_name: <i class="nf nf-md-thought_bubble"></i> Think
+    display_name: <i class="nf nf-md-thought_bubble"></i>
     bind_to_monitor: 0
     keep_alive: true
   - name: "3"
-    display_name: <i class="nf nf-cod-globe"></i> Web
+    display_name: <i class="nf nf-cod-globe"></i>
     bind_to_monitor: 1
     keep_alive: true
   - name: "4"
-    display_name: <i class="nf nf-cod-terminal"></i> Code
+    display_name: <i class="nf nf-cod-terminal"></i>
     bind_to_monitor: 1
     keep_alive: true 
   - name: "5"
-    display_name: <i class="nf nf-fa-music"></i> Music
+    display_name: <i class="nf nf-fa-music"></i>
     bind_to_monitor: 1
     keep_alive: true 
   - name: "6"
-    display_name: <i class="nf nf-oct-smiley"></i> Personal
+    display_name: <i class="nf nf-oct-smiley"></i>
     bind_to_monitor: 0
     keep_alive: true 
   - name: "7"
