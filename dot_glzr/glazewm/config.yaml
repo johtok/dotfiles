@@ -128,17 +128,23 @@ window_rules:
       - window_process: { regex: "" }
   - commands: ['move --workspace 2']
     match:
-      - window_process: { regex: "Logseq" }
+      - window_process: { equals: "Logseq" }
       - window_process: { regex: "SumatraPDF" }
   - commands: ['move --workspace 3']
     match:
-      - window_process: { regex: "edge|firefox|brave" }
+    - window_process: { equals: "edge" }
+    - window_process: { equals: "firefox" }
+    - window_process: { equals: "brave" }
   - commands: ['move --workspace 4']
     match:
-      - window_process: { regex: "code|wezterm" }
+      - window_process: { equals: "code" }
+      - window_process: { equals: "wezterm-gui" }
   - commands: ['move --workspace 5']
     match:
-      - window_process: { regex: "WhatsApp|Messenger|Spotify|ms-teams" }
+      - window_process: { equals: "WhatsApp" }
+      - window_process: { equals: "Messenger" }
+      - window_process: { equals: "Spotify" }
+      - window_process: { equals: "ms-teams" }
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
