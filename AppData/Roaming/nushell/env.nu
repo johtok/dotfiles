@@ -99,3 +99,17 @@ $env.NU_PLUGIN_DIRS = [
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
+
+# Set error action preference to stop on error
+$env.ErrorActionPreference = "Stop" # exit when command fails
+
+# Set XDG environment variables if not already set
+$env.XDG_DATA_HOME = ($env.XDG_DATA_HOME? | default $env.APPDATA)
+$env.XDG_CONFIG_HOME = ($env.XDG_CONFIG_HOME? | default $env.LOCALAPPDATA)
+$env.XDG_CACHE_HOME = ($env.XDG_CACHE_HOME? | default $env.TEMP)
+
+# Set LunarVim directories if not already set
+$env.LUNARVIM_RUNTIME_DIR = ($env.LUNARVIM_RUNTIME_DIR? | default ($env.XDG_DATA_HOME | path join "lunarvim"))
+$env.LUNARVIM_CONFIG_DIR = ($env.LUNARVIM_CONFIG_DIR? | default ($env.XDG_CONFIG_HOME | path join "lvim"))
+$env.LUNARVIM_CACHE_DIR = ($env.LUNARVIM_CACHE_DIR? | default ($env.XDG_CACHE_HOME | path join "lvim"))
+$env.LUNARVIM_BASE_DIR = ($env.LUNARVIM_BASE_DIR? | default ($env.LUNARVIM_RUNTIME_DIR | path join "lvim"))
