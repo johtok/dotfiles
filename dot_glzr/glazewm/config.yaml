@@ -134,7 +134,7 @@ window_rules:
   - commands: ['move --workspace 3']
     match:
       - window_process: { equals: "Edge" }
-      - window_process: { equals: "Firefox" }
+      - window_process: { equals: "firefox" }
       - window_process: { equals: "brave" }
       - window_process: { equals: "Vieb" }
       - window_process: { equals: "gvim" }
