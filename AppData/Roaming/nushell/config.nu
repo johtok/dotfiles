@@ -903,3 +903,4 @@ source ~/.zoxide.nu
 # Launch Neovim with the specified configuration file and arguments
 alias lvim = nvim -u ($env.LUNARVIM_BASE_DIR | path join "init.lua")
 alias br = broot
+alias cd = z
