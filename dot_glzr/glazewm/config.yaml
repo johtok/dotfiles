@@ -125,7 +125,7 @@ window_rules:
         window_class: { regex: 'HwndWrapper*' }
   - commands: ['move --workspace 1']
     match:
-      - window_process: { regex: "" }
+      - window_process: { regex: "*" }
   - commands: ['move --workspace 2']
     match:
       - window_process: { equals: "Logseq" }
@@ -145,7 +145,10 @@ window_rules:
       - window_process: { equals: "wezterm-gui" }
   - commands: ['move --workspace 5']
     match:
-      - window_process: { regex: "WhatsApp|Messenger|Spotify|ms-teams" }
+      - window_process: { equals: "WhatsApp" }
+      - window_process: { equals: "Messenger" }
+      - window_process: { equals: "Spotify" }
+      - window_process: { equals: "ms-teams" }
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
