@@ -1,7 +1,7 @@
 general:
   # Commands to run when the WM has started (e.g. to run a script or launch
   # another application). Here we are running a batch script to start Zebar.
-  startup_commands: ['shell-exec %userprofile%\.glzr\zebar\start.bat && wscript.exe "%userprofile%\GAT-GWM\target\release\invisible.vbs" "%userprofile%\GAT-GWM\target\release\start.bat"']
+  startup_commands: ['shell-exec %userprofile%\.glzr\zebar\start.bat']
 
   # Whether to automatically focus windows underneath the cursor.
   focus_follows_cursor: true
@@ -133,16 +133,15 @@ window_rules:
       
   - commands: ['move --workspace 3']
     match:
-      - window_process: { equals: "Edge" }
-      - window_process: { equals: "firefox" }
+      - window_process: { equals: "msedge" }
+      - window_process: { equals: "Firefox" }
       - window_process: { equals: "brave" }
-      - window_process: { equals: "Vieb" }
       - window_process: { equals: "gvim" }
       
   - commands: ['move --workspace 4']
     match:
       - window_process: { equals: "Code" }
-      - window_process: { equals: "wezterm-gui" }
+      - window_process: { equals: "WezTerm" }
   - commands: ['move --workspace 5']
     match:
       - window_process: { equals: "WhatsApp" }
