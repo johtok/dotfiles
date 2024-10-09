@@ -115,39 +115,32 @@ window_rules:
 
       - window_title: { equals: "Run" } # Win + R
 
-      # Ignores picture-in-picture windows for browsers.
+      # Ignores picture-in-picture windows for browsers.  
       - window_title: { regex: '[Pp]icture.in.[Pp]icture' }
         window_class: { regex: 'Chrome_WidgetWin_1|MozillaDialogClass' }
-
       # Ignore rules for various 3rd-party apps.
       - window_process: { equals: 'PowerToys.PowerAccent' }
-      - window_process: { equals: 'Lively' }
-        window_class: { regex: 'HwndWrapper*' }
+      - window_process: { equals: 'PowerToys' }
+        window_class: { regex: 'HwndWrapper\[PowerToys\.PowerAccent.*?\]' }
+      - window_process: { equals: 'PowerToys' }
+        window_title: { regex: '.*? - Peek' }
   - commands: ['move --workspace 1']
     match:
       - window_process: { regex: "*" }
   - commands: ['move --workspace 2']
     match:
-      - window_process: { equals: "Logseq" }
-      - window_process: { equals: "SumatraPDF" }
+      - window_process: { regex: "Logseq|SumatraPDF" }
       
   - commands: ['move --workspace 3']
     match:
-      - window_process: { equals: "msedge" }
-      - window_process: { equals: "Firefox" }
-      - window_process: { equals: "brave" }
-      - window_process: { equals: "gvim" }
+      - window_process: { regex: "Microsoft Edge|Firefox|brave|gvim" }
       
   - commands: ['move --workspace 4']
     match:
-      - window_process: { equals: "Code" }
-      - window_process: { equals: "WezTerm" }
+      - window_process: { regex: "Code|WezTerm" }
   - commands: ['move --workspace 5']
     match:
-      - window_process: { equals: "WhatsApp" }
-      - window_process: { equals: "Messenger" }
-      - window_process: { equals: "Spotify" }
-      - window_process: { equals: "ms-teams" }
+      - window_process: { regex: "WhatsApp|Messenger|Spotify|Microsof Teams" }
 
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
