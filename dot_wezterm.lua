@@ -10,7 +10,7 @@ if wezterm.config_builder then
 
 config.default_prog = { 'nu' }
 
-config.font = wezterm.font 'JetBrainsMono NFM'
+config.font = wezterm.font 'JetBrainsMono NF'
 config.font_size = 16
 config.window_background_opacity = 0.88
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
