@@ -71,23 +71,23 @@ window_behavior:
 
 workspaces:
   - name: "1"
-    display_name: <i class="nf nf-fa-home"></i>
+    display_name: 🏠
     bind_to_monitor: 1
     keep_alive: true
   - name: "2"
-    display_name: <i class="nf nf-md-thought_bubble"></i>
+    display_name: 💭
     bind_to_monitor: 0
     keep_alive: true
   - name: "3"
-    display_name: <i class="nf nf-cod-globe"></i>
+    display_name: 🌍
     bind_to_monitor: 1
     keep_alive: true
   - name: "4"
-    display_name: <i class="nf nf-cod-terminal"></i>
+    display_name: ⌨️
     bind_to_monitor: 1
     keep_alive: true 
   - name: "5"
-    display_name: <i class="nf nf-oct-smiley"></i>
+    display_name: 🕺
     bind_to_monitor: 0
     keep_alive: true 
   - name: "6"
@@ -129,19 +129,26 @@ window_rules:
       - window_process: { regex: "*" }
   - commands: ['move --workspace 2']
     match:
-      - window_process: { regex: "Logseq|SumatraPDF" }
-      
+      - window_process: { equals: "logseq" }
+      - window_process: { equals: "sumatrapdf" }
+      - window_process: { equals: "sioyek" }
+
   - commands: ['move --workspace 3']
     match:
-      - window_process: { regex: "Microsoft Edge|Firefox|brave|gvim" }
-      
+      - window_process: { equals: "msedge" }
+      - window_process: { equals: "firefox" }
+      - window_process: { equals: "brave" }
+      - window_process: { equals: "gvim" }
   - commands: ['move --workspace 4']
     match:
-      - window_process: { regex: "Code|WezTerm" }
+      - window_process: { equals: "Code" }
+      - window_process: { regex: "wezterm" }
   - commands: ['move --workspace 5']
     match:
-      - window_process: { regex: "WhatsApp|Messenger|Spotify|Microsof Teams" }
-
+      - window_process: { equals: "WhatsApp" }
+      - window_process: { equals: "Messenger" }
+      - window_process: { equals: "Spotify" }
+      - window_process: { equals: "Microsof Teams" }
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
   - name: 'resize'
