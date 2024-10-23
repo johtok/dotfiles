@@ -1,14 +1,22 @@
 general:
-  # Commands to run when the WM has started (e.g. to run a script or launch
-  # another application). Here we are running a batch script to start Zebar.
-  startup_commands: ['shell-exec %userprofile%\.glzr\zebar\start.bat']
+  # Commands to run when the WM has started. This is useful for running a
+  # script or launching another application.
+  # Example: The below command launches Zebar.
+  startup_commands: ['shell-exec zebar']
+
+  # Commands to run just before the WM is shutdown.
+  # Example: The below command kills Zebar.
+  shutdown_commands: ['shell-exec taskkill /IM zebar.exe /F']
+
+  # Commands to run after the WM config is reloaded.
+  config_reload_commands: []
 
   # Whether to automatically focus windows underneath the cursor.
   focus_follows_cursor: true
 
   # Whether to switch back and forth between the previously focused
   # workspace when focusing the current workspace.
-  toggle_workspace_on_refocus: true
+  toggle_workspace_on_refocus: false
 
   cursor_jump:
     # Whether to automatically move the cursor on the specified trigger.
@@ -18,8 +26,10 @@ general:
     # - 'monitor_focus': Jump when focus changes between monitors.
     # - 'window_focus': Jump when focus changes between windows.
     trigger: 'window_focus'
-
 gaps:
+  # Whether to scale the gaps with the DPI of the monitor.
+  scale_with_dpi: true
+
   # Gap between adjacent windows.
   inner_gap: '5px'
 
@@ -39,11 +49,30 @@ window_effects:
       enabled: true
       color: '#8dbcff'
 
+
+    # Remove the title bar from the window's frame. Note that this can
+    # cause rendering issues for some applications.
+    hide_title_bar:
+      enabled: false
+
+    # Change the corner style of the window's frame.
+    # ** Exclusive to Windows 11 due to API limitations.
+    corner_style:
+      enabled: false
+      # Allowed values: 'square', 'rounded', 'small_rounded'.
+      style: 'square'
+
+
   # Visual effects to apply to non-focused windows.
   other_windows:
     border:
       enabled: true
       color: '#a1a1a1'
+    hide_title_bar:
+      enabled: false
+    corner_style:
+      enabled: false
+      style: 'square'
 
 window_behavior:
   # New windows are created in this state whenever possible.
@@ -70,36 +99,39 @@ window_behavior:
       shown_on_top: false
 
 workspaces:
-  - name: "1"
-    display_name: 🏠
-    bind_to_monitor: 1
-    keep_alive: true
-  - name: "2"
-    display_name: 💭
+  - name: scratch 
+    display_name: 📓
     bind_to_monitor: 0
     keep_alive: true
-  - name: "3"
+  - name: coms
+    display_name: 📣 
+    bind_to_monitor: 0
+    keep_alive: true
+  - name: info
     display_name: 🌍
-    bind_to_monitor: 1
-    keep_alive: true
-  - name: "4"
-    display_name: ⌨️
-    bind_to_monitor: 1
-    keep_alive: true 
-  - name: "5"
-    display_name: 🕺
     bind_to_monitor: 0
-    keep_alive: true 
+    keep_alive: true
+  - name: "1"
+    display_name: I 
+  - name: "2"
+    display_name: II 
+  - name: "3"
+    display_name: III 
+  - name: "4"
+    display_name: IV
+  - name: "5"
+    display_name: V
   - name: "6"
-    display_name: "+1"
+    display_name: VI
   - name: "7"
-    display_name: "+2"
+    display_name: VII
   - name: "8"
-    display_name: "+3"
+    display_name: IIX 
   - name: "9"
-    display_name: "+4"
+    display_name: IX
   - name: "0"
-    display_name: "+5"
+    display_name: X
+ 
 
 window_rules:
   - commands: ['ignore']
@@ -124,31 +156,23 @@ window_rules:
         window_class: { regex: 'HwndWrapper\[PowerToys\.PowerAccent.*?\]' }
       - window_process: { equals: 'PowerToys' }
         window_title: { regex: '.*? - Peek' }
-  - commands: ['move --workspace 1']
-    match:
-      - window_process: { regex: "*" }
-  - commands: ['move --workspace 2']
-    match:
-      - window_process: { equals: "logseq" }
-      - window_process: { equals: "sumatrapdf" }
-      - window_process: { equals: "sioyek" }
-
-  - commands: ['move --workspace 3']
+  - commands: ['move --workspace info']
     match:
       - window_process: { equals: "msedge" }
       - window_process: { equals: "firefox" }
-      - window_process: { equals: "brave" }
+      - window_process: { equals: "brave" } 
+      - window_process: { equals: "sumatrapdf" }
+      - window_process: { equals: "sioyek" }
       - window_process: { equals: "gvim" }
-  - commands: ['move --workspace 4']
+
+  - commands: ['move --workspace coms']
     match:
-      - window_process: { equals: "Code" }
-      - window_process: { regex: "wezterm" }
-  - commands: ['move --workspace 5']
-    match:
+      - window_process: { equals: "Logseq" }
       - window_process: { equals: "WhatsApp" }
       - window_process: { equals: "Messenger" }
       - window_process: { equals: "Spotify" }
       - window_process: { equals: "Microsof Teams" }
+
 binding_modes:
   # When enabled, the focused window can be resized via arrow keys or HJKL.
   - name: 'resize'
@@ -259,15 +283,21 @@ keybindings:
 
   # Focus the next/previous workspace defined in `workspaces` config.
   - commands: ['focus --next-workspace']
-    bindings: ['alt+oem_pipe']
+    bindings: ['alt+c']
   - commands: ['focus --prev-workspace']
-    bindings: ['alt+shift+oem_pipe']
+    bindings: ['alt+shift+c']
 
   # Focus the workspace that last had focus.
   - commands: ['focus --recent-workspace']
     bindings: ['alt+z']
 
   # Change focus to a workspace defined in `workspaces` config.
+  - commands: ['focus --workspace info']
+    bindings: ['alt+w']
+  - commands: ['focus --workspace coms']
+    bindings: ['alt+q']
+  - commands: ['focus --workspace scratch']
+    bindings: ['alt+oem_pipe']
   - commands: ['focus --workspace 1']
     bindings: ['alt+1']
   - commands: ['focus --workspace 2']
@@ -286,7 +316,8 @@ keybindings:
     bindings: ['alt+8']
   - commands: ['focus --workspace 9']
     bindings: ['alt+9']
-
+  - commands: ['focus --workspace 0']
+    bindings: ['alt+0']
   # Move the focused window's parent workspace to a monitor in a given
   # direction.
   - commands: ['move-workspace --direction left']
@@ -299,21 +330,29 @@ keybindings:
     bindings: ['alt+shift+s']
 
   # Move focused window to a workspace defined in `workspaces` config.
-  - commands: ['move --workspace 1', 'focus --workspace 1']
+  - commands: ['move --workspace info']
+    bindings: ['alt+shift+w']
+  - commands: ['move --workspace coms']
+    bindings: ['alt+shift+q']
+  - commands: ['move --workspace scratch']
+    bindings: ['alt+shift+oem_pipe']
+  - commands: ['move --workspace 1']
     bindings: ['alt+shift+1']
-  - commands: ['move --workspace 2', 'focus --workspace 2']
+  - commands: ['move --workspace 2']
     bindings: ['alt+shift+2']
-  - commands: ['move --workspace 3', 'focus --workspace 3']
+  - commands: ['move --workspace 3']
     bindings: ['alt+shift+3']
-  - commands: ['move --workspace 4', 'focus --workspace 4']
+  - commands: ['move --workspace 4']
     bindings: ['alt+shift+4']
-  - commands: ['move --workspace 5', 'focus --workspace 5']
+  - commands: ['move --workspace 5']
     bindings: ['alt+shift+5']
-  - commands: ['move --workspace 6', 'focus --workspace 6']
+  - commands: ['move --workspace 6']
     bindings: ['alt+shift+6']
-  - commands: ['move --workspace 7', 'focus --workspace 7']
+  - commands: ['move --workspace 7']
     bindings: ['alt+shift+7']
-  - commands: ['move --workspace 8', 'focus --workspace 8']
+  - commands: ['move --workspace 8']
     bindings: ['alt+shift+8']
-  - commands: ['move --workspace 9', 'focus --workspace 9']
-    bindings: ['alt+shift+9']
+  - commands: ['move --workspace 9']
+    bindings: ['alt+shift+9'] 
+  - commands: ['move --workspace 0']
+    bindings: ['alt+shift+0']
