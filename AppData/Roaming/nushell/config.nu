@@ -141,9 +141,9 @@ let light_theme = {
 }
 
 # External completer example
-# let carapace_completer = {|spans|
-#     carapace $spans.0 nushell ...$spans | from json
-# }
+ let carapace_completer = {|spans|
+     carapace $spans.0 nushell ...$spans | from json
+ }
 
 # The default config record. This is where much of your global configuration is setup.
 $env.config = {
@@ -213,12 +213,12 @@ $env.config = {
         case_sensitive: false # set to true to enable case-sensitive completions
         quick: true    # set this to false to prevent auto-selecting completions when only one remains
         partial: true    # set this to false to prevent partial filling of the prompt
-        algorithm: "fuzzy"    # prefix or fuzzy
+        algorithm: "prefix"    # prefix or fuzzy
         sort: "smart" # "smart" (alphabetical for prefix matching, fuzzy score for fuzzy matching) or "alphabetical"
         external: {
             enable: true # set to false to prevent nushell looking into $env.PATH to find more suggestions, `false` recommended for WSL users as this look up may be very slow
             max_results: 100 # setting it lower can improve completion performance at the cost of omitting some options
-            completer: null # check 'carapace_completer' above as an example
+            completer: $carapace_completer # check 'carapace_completer' above as an example
         }
         use_ls_colors: true # set this to true to enable file/path/directory completions using LS_COLORS
     }
@@ -903,4 +903,3 @@ source ~/.zoxide.nu
 # Launch Neovim with the specified configuration file and arguments
 alias lvim = nvim -u ($env.LUNARVIM_BASE_DIR | path join "init.lua")
 alias br = broot
-alias cd = z
