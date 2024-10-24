@@ -16,7 +16,7 @@ config.window_background_opacity = 1
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.use_fancy_tab_bar = false
 config.color_scheme = 'One Dark (Gogh)'
-config.hide_tab_bar_if_only_one_tab = false
+config.hide_tab_bar_if_only_one_tab = true
 
 
   
