@@ -101,8 +101,6 @@ window_behavior:
 workspaces:
   - name: scratch 
     display_name: 📓
-    bind_to_monitor: 0
-    keep_alive: true
   - name: coms
     display_name: 📣 
     bind_to_monitor: 0
@@ -156,13 +154,14 @@ window_rules:
         window_class: { regex: 'HwndWrapper\[PowerToys\.PowerAccent.*?\]' }
       - window_process: { equals: 'PowerToys' }
         window_title: { regex: '.*? - Peek' }
+      - window_process: { equals: 'Lively' }
+        window_class: { regex: 'HwndWrapper' }
+
   - commands: ['move --workspace info']
     match:
       - window_process: { equals: "msedge" }
-      - window_process: { equals: "firefox" }
       - window_process: { equals: "brave" } 
       - window_process: { equals: "sumatrapdf" }
-      - window_process: { equals: "sioyek" }
       - window_process: { equals: "gvim" }
 
   - commands: ['move --workspace coms']
@@ -261,25 +260,29 @@ keybindings:
 
   # Close focused window.
   - commands: ['close']
-    bindings: ['alt+shift+z']
+    bindings: ['alt+shift+x']
 
   # Kill GlazeWM process safely.
   - commands: ['wm-exit']
-    bindings: ['alt+shift+c']
+    bindings: ['alt+shift+z']
 
   # Re-evaluate configuration file.
   - commands: ['wm-reload-config']
     bindings: ['alt+shift+v']
 
-  # Redraw all windows.
-  - commands: ['wm-redraw']
-    bindings: ['alt+shift+x']
-
   # Launch CMD terminal. Alternatively, use `shell-exec wt` or
   # `shell-exec %ProgramFiles%/Git/git-bash.exe` to start Windows
   # Terminal and Git Bash respectively.
-  - commands: ['shell-exec %UserProfile%\\scoop\\apps\\wezterm\\current\\wezterm-gui.exe']
+  - commands: ['shell-exec C:\Users\johan\scoop\apps\wezterm\current\wezterm-gui.exe']
     bindings: ['alt+enter']
+
+  # Browser.
+  - commands: ['shell-exec C:\Users\johan\scoop\apps\firefox\current\firefox.exe']
+    bindings: ['alt+b']
+
+  # PDF Viewer
+  - commands: ['shell-exec C:\Users\johan\scoop\apps\sioyek\current\sioyek.exe']
+    bindings: ['alt+e']
 
   # Focus the next/previous workspace defined in `workspaces` config.
   - commands: ['focus --next-workspace']
