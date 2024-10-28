@@ -1,0 +1,3 @@
+[submodule "tokyonight-wallpapers"]
+	path = dot_config/tokyonight-wallpapers
+	url = https://github.com/atraxsrc/tokyonight-wallpapers.git
