@@ -141,9 +141,9 @@ let light_theme = {
 }
 
 # External completer example
- let carapace_completer = {|spans|
-     carapace $spans.0 nushell ...$spans | from json
- }
+# let carapace_completer = {|spans|
+#     carapace $spans.0 nushell ...$spans | from json
+# }
 
 # The default config record. This is where much of your global configuration is setup.
 $env.config = {
@@ -155,11 +155,11 @@ $env.config = {
     }
 
     rm: {
-        always_trash: true # always act as if -t was given. Can be overridden with -p
+        always_trash: false # always act as if -t was given. Can be overridden with -p
     }
 
     table: {
-        mode: light  # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
+        mode: rounded # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
         index_mode: always # "always" show indexes, "never" show indexes, "auto" = show indexes when a table has "index" column
         show_empty: true # show 'empty list' and 'empty record' placeholders for command output
         padding: { left: 1, right: 1 } # a left right padding of each column in a table
@@ -187,7 +187,7 @@ $env.config = {
     # showing something like "a day ago."
     datetime_format: {
         # normal: '%a, %d %b %Y %H:%M:%S %z'    # shows up in displays of variables or other datetime's outside of tables
-        table: '%m/%d/%y %I:%M:%S%p'          # generally shows up in tabular outputs such as ls. commenting this out will change it to the default human readable datetime format
+        # table: '%m/%d/%y %I:%M:%S%p'          # generally shows up in tabular outputs such as ls. commenting this out will change it to the default human readable datetime format
     }
 
     explore: {
@@ -216,9 +216,10 @@ $env.config = {
         algorithm: "prefix"    # prefix or fuzzy
         sort: "smart" # "smart" (alphabetical for prefix matching, fuzzy score for fuzzy matching) or "alphabetical"
         external: {
-            enable: true # set to false to prevent nushell looking into $env.PATH to find more suggestions, `false` recommended for WSL users as this look up may be very slow
+            enable: false # set to false to prevent nushell looking into $env.PATH to find more suggestions, `false` recommended for WSL users as
+this look up may be very slow
             max_results: 100 # setting it lower can improve completion performance at the cost of omitting some options
-            completer: $carapace_completer # check 'carapace_completer' above as an example
+            completer: null # check 'carapace_completer' above as an example
         }
         use_ls_colors: true # set this to true to enable file/path/directory completions using LS_COLORS
     }
@@ -240,7 +241,7 @@ $env.config = {
     buffer_editor: null # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
     use_ansi_coloring: true
     bracketed_paste: true # enable bracketed paste, currently useless on windows
-    edit_mode: vi # emacs, vi
+    edit_mode: emacs # emacs, vi
     shell_integration: {
         # osc2 abbreviates the path if in the home_dir, sets the tab/window title, shows the running command in the tab/window title
         osc2: true
@@ -249,14 +250,14 @@ $env.config = {
         # osc8 is also implemented as the deprecated setting ls.show_clickable_links, it shows clickable links in ls output if your terminal supports it. show_clickable_links is deprecated in favor of osc8
         osc8: true
         # osc9_9 is from ConEmu and is starting to get wider support. It's similar to osc7 in that it communicates the path to the terminal
-        osc9_9: true
+        osc9_9: false
         # osc133 is several escapes invented by Final Term which include the supported ones below.
         # 133;A - Mark prompt start
         # 133;B - Mark prompt end
         # 133;C - Mark pre-execution
         # 133;D;exit - Mark execution finished with exit code
         # This is used to enable terminals to know where the prompt is, the command is, where the command finishes, and where the output of the command is
-        osc133: false
+        osc133: true
         # osc633 is closely related to osc133 but only exists in visual studio code (vscode) and supports their shell integration features
         # 633;A - Mark prompt start
         # 633;B - Mark prompt end
@@ -267,10 +268,10 @@ $env.config = {
         # and also helps with the run recent menu in vscode
         osc633: true
         # reset_application_mode is escape \x1b[?1l and was added to help ssh work better
-        reset_application_mode: false
+        reset_application_mode: true
     }
     render_right_prompt_on_last_line: false # true or false to enable or disable right prompt to be rendered on last line of the prompt.
-    use_kitty_protocol: true # enables keyboard enhancement protocol implemented by kitty console, only if your terminal support this.
+    use_kitty_protocol: false # enables keyboard enhancement protocol implemented by kitty console, only if your terminal support this.
     highlight_resolved_externals: false # true enables highlighting of external commands in the repl resolved by which.
     recursion_limit: 50 # the maximum number of times nushell allows recursion before stopping it
 
@@ -895,12 +896,9 @@ $env.config = {
             event: { edit: selectall }
         }
     ]
+use ~\.cache\pixi\completions.nu *
+use ~\.cache\starship\init.nu
+def runmatlab [main] {
+    matlab -batch "$main; exit"
+    }
 }
-source ~/Appdata/Roaming/nushell/tomorrow-night.nu
-use ~/.cache/pixi/completions.nu *
-#use ~/.cache/starship/init.nu
-source ~/.zoxide.nu
-
-# Launch Neovim with the specified configuration file and arguments
-alias lvim = nvim -u ($env.LUNARVIM_BASE_DIR | path join "init.lua")
-alias br = broot
