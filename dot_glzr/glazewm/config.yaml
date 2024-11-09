@@ -273,18 +273,18 @@ keybindings:
   # Launch CMD terminal. Alternatively, use `shell-exec wt` or
   # `shell-exec %ProgramFiles%/Git/git-bash.exe` to start Windows
   # Terminal and Git Bash respectively.
-  - commands: ['shell-exec C:\Users\johan\scoop\apps\wezterm\current\wezterm-gui.exe']
+  - commands: ['shell-exec wezterm-gui.exe']
     bindings: ['alt+enter']
 
   # Browser.
-  - commands: ['shell-exec C:\Users\johan\scoop\apps\firefox\current\firefox.exe']
+  - commands: ['shell-exec firefox.exe']
     bindings: ['alt+b']
 
   # PDF Viewer
-  - commands: ['shell-exec C:\Users\johan\scoop\apps\sioyek\current\sioyek.exe']
+  - commands: ['shell-exec sioyek.exe']
     bindings: ['alt+e']
 
-  # Focus the next/previous workspace defined in `workspaces` config.
+  # Focus the next/previous workspace defined in `workspaces` config. 
   - commands: ['focus --next-workspace']
     bindings: ['alt+c']
   - commands: ['focus --prev-workspace']
