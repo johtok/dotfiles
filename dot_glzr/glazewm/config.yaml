@@ -26,6 +26,15 @@ general:
     # - 'monitor_focus': Jump when focus changes between monitors.
     # - 'window_focus': Jump when focus changes between windows.
     trigger: 'window_focus'
+
+  # How windows should be hidden when switching workspaces.
+  # - 'cloak': Recommended. Hides windows with no animation and keeps them
+  # visible in the taskbar.
+  # - 'hide': Legacy method (v3.5 and earlier) that has a brief animation,
+  # but has stability issues with some apps.
+  hide_method: 'hide'
+
+
 gaps:
   # Whether to scale the gaps with the DPI of the monitor.
   scale_with_dpi: true
@@ -93,22 +102,23 @@ window_behavior:
     fullscreen:
       # Maximize the window if possible. If the window doesn't have a
       # maximize button, then it'll be fullscreen'ed normally instead.
-      maximized: false
+      maximized: true
 
       # Whether to show fullscreen windows as always on top.
-      shown_on_top: false
+      shown_on_top: true
 
 workspaces:
   - name: scratch 
-    display_name: 📓
+    display_name: 💻 
   - name: coms
     display_name: 📣 
     bind_to_monitor: 0
-    keep_alive: true
   - name: info
     display_name: 🌍
     bind_to_monitor: 0
-    keep_alive: true
+  - name: read
+    display_name: 📓
+    bind_to_monitor: 0
   - name: "1"
     display_name: I 
   - name: "2"
@@ -230,7 +240,7 @@ keybindings:
   # resizing via arrow keys or HJKL. The binding mode is defined above with
   # the name 'resize'.
   - commands: ['wm-enable-binding-mode --name resize']
-    bindings: ['alt+r']
+    bindings: ['alt+shift+v']
 
   # Disables all keybindings until alt+shift+p is pressed again.
   - commands: ['wm-enable-binding-mode --name pause']
@@ -268,21 +278,21 @@ keybindings:
 
   # Re-evaluate configuration file.
   - commands: ['wm-reload-config']
-    bindings: ['alt+shift+v']
+    bindings: ['alt+shift+r']
 
   # Launch CMD terminal. Alternatively, use `shell-exec wt` or
   # `shell-exec %ProgramFiles%/Git/git-bash.exe` to start Windows
   # Terminal and Git Bash respectively.
-  - commands: ['shell-exec wezterm-gui.exe']
+  - commands: ['shell-exec alacritty']
     bindings: ['alt+enter']
 
   # Browser.
-  - commands: ['shell-exec firefox.exe']
+  - commands: ['shell-exec qutebrowser.exe']
     bindings: ['alt+b']
 
   # PDF Viewer
   - commands: ['shell-exec sioyek.exe']
-    bindings: ['alt+e']
+    bindings: ['alt+r']
 
   # Focus the next/previous workspace defined in `workspaces` config. 
   - commands: ['focus --next-workspace']
@@ -295,12 +305,14 @@ keybindings:
     bindings: ['alt+z']
 
   # Change focus to a workspace defined in `workspaces` config.
-  - commands: ['focus --workspace info']
-    bindings: ['alt+w']
-  - commands: ['focus --workspace coms']
-    bindings: ['alt+q']
   - commands: ['focus --workspace scratch']
     bindings: ['alt+oem_pipe']
+  - commands: ['focus --workspace coms']
+    bindings: ['alt+q']
+  - commands: ['focus --workspace info']
+    bindings: ['alt+w']
+  - commands: ['focus --workspace read']
+    bindings: ['alt+e']
   - commands: ['focus --workspace 1']
     bindings: ['alt+1']
   - commands: ['focus --workspace 2']
@@ -333,12 +345,14 @@ keybindings:
     bindings: ['alt+shift+s']
 
   # Move focused window to a workspace defined in `workspaces` config.
-  - commands: ['move --workspace info']
-    bindings: ['alt+shift+w']
-  - commands: ['move --workspace coms']
-    bindings: ['alt+shift+q']
   - commands: ['move --workspace scratch']
     bindings: ['alt+shift+oem_pipe']
+  - commands: ['move --workspace coms']
+    bindings: ['alt+shift+q']
+  - commands: ['move --workspace info']
+    bindings: ['alt+shift+w']
+  - commands: ['move --workspace read']
+    bindings: ['alt+shift+e']
   - commands: ['move --workspace 1']
     bindings: ['alt+shift+1']
   - commands: ['move --workspace 2']
