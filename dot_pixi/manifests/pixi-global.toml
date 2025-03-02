@@ -1,0 +1,110 @@
+version = 1
+
+[envs.juliaup]
+channels = ["conda-forge"]
+dependencies = { juliaup = "*" }
+exposed = { julia = "julia", juliaup = "juliaup" }
+
+[envs.python]
+channels = ["conda-forge"]
+dependencies = { python = "*" , matplotlib = "*", numpy = "*" , nbconvert = "*", sympy = "*", scipy = "*" , jupyter = "*" , ipykernel = "*" , jupyter-cache = "*" , markdown2 = "*" , polars = "*" , ipython = "*" , pytorch = "*" }
+exposed = { idle = "idle", pydoc = "pydoc", python = "python", pythonw = "pythonw" , ipython = "ipython" , jupyter = "jupyter" }
+
+[envs.eza]
+channels = ["conda-forge"]
+dependencies = { eza = "*" }
+exposed = { eza = "eza" }
+
+[envs.bat]
+channels = ["conda-forge"]
+dependencies = { bat = "*" }
+exposed = { bat = "bat" }
+
+[envs.ripgrep]
+channels = ["conda-forge"]
+dependencies = { ripgrep = "*" }
+exposed = { rg = "rg" }
+
+[envs.fd-find]
+channels = ["conda-forge"]
+dependencies = { fd-find = "*" }
+exposed = { fd = "fd" }
+
+[envs.zoxide]
+channels = ["conda-forge"]
+dependencies = { zoxide = "*" }
+exposed = { zoxide = "zoxide" }
+
+[envs.sd]
+channels = ["conda-forge"]
+dependencies = { sd = "*" }
+exposed = { sd = "sd" }
+
+[envs.dust]
+channels = ["conda-forge"]
+dependencies = { dust = "*" }
+exposed = { dust = "dust" }
+
+[envs.dua-cli]
+channels = ["conda-forge"]
+dependencies = { dua-cli = "*" }
+exposed = { dua = "dua" }
+
+[envs.bottom]
+channels = ["conda-forge"]
+dependencies = { bottom = "*" }
+exposed = { btm = "btm" }
+
+[envs.rip2]
+channels = ["conda-forge"]
+dependencies = { rip2 = "*" }
+exposed = { rip = "rip" }
+
+[envs.delta]
+channels = ["conda-forge"]
+dependencies = { delta = "*" }
+
+[envs.yazi]
+channels = ["conda-forge"]
+dependencies = { yazi = "*" }
+exposed = { ya = "ya", yazi = "yazi" }
+
+[envs.grex]
+channels = ["conda-forge"]
+dependencies = { grex = "*" }
+exposed = { grex = "grex" }
+
+[envs.git-cliff]
+channels = ["conda-forge"]
+dependencies = { git-cliff = "*" }
+exposed = { git-cliff-completions = "git-cliff-completions", git-cliff-mangen = "git-cliff-mangen", git-cliff = "git-cliff" }
+
+[envs.mcfly]
+channels = ["conda-forge"]
+dependencies = { mcfly = "*" }
+exposed = { mcfly = "mcfly" }
+
+[envs.tokei]
+channels = ["conda-forge"]
+dependencies = { tokei = "*" }
+exposed = { tokei = "tokei" }
+
+[envs.tealdeer]
+channels = ["conda-forge"]
+dependencies = { tealdeer = "*" }
+exposed = { tldr = "tldr" }
+
+[envs.starship]
+channels = ["conda-forge"]
+dependencies = { starship = "*" }
+exposed = { starship = "starship" }
+
+[envs.hwatch]
+channels = ["conda-forge"]
+dependencies = { hwatch = "*" }
+exposed = { hwatch = "hwatch" }
+
+[envs.hyperfine]
+channels = ["conda-forge"]
+dependencies = { hyperfine = "*" }
+exposed = { hyperfine = "hyperfine" }
