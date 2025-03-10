@@ -108,3 +108,18 @@ exposed = { hwatch = "hwatch" }
 channels = ["conda-forge"]
 dependencies = { hyperfine = "*" }
 exposed = { hyperfine = "hyperfine" }
+
+[envs.chezmoi]
+channels = ["conda-forge"]
+dependencies = { chezmoi = "*" }
+exposed = { chezmoi = "chezmoi" }
+
+[envs.lazygit]
+channels = ["conda-forge"]
+dependencies = { lazygit = "*" }
+exposed = { lazygit = "lazygit" }
+
+[envs.go]
+channels = ["conda-forge"]
+dependencies = { go = "*" }
+exposed = { go = "go", gofmt = "gofmt" }
